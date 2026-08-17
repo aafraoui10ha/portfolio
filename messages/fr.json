@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "title": "Aafraoui Hatim — Développeur Full Stack Web & Mobile",
+    "description": "Aafraoui Hatim est un développeur Full Stack Web & Mobile basé à Marrakech, au Maroc, qui conçoit des produits digitaux modernes, des applications évolutives et des expériences utilisateur mémorables avec Next.js, Laravel, Flutter et l'automatisation.",
+    "ogAlt": "Aafraoui Hatim — Développeur Full Stack Web & Mobile"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "work": "Travaux",
+    "services": "Services",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Fermer"
+  },
+  "cursor": {
+    "view": "Voir",
+    "open": "Ouvrir",
+    "drag": "Glisser",
+    "explore": "Explorer"
+  },
+  "preloader": {
+    "label": "Chargement de l'expérience"
+  },
+  "hero": {
+    "eyebrow": "01",
+    "name": "Aafraoui Hatim",
+    "roleLines": ["Développeur", "Full Stack", "Web & Mobile"],
+    "tagline": "Web • Mobile • Expériences digitales",
+    "location": "Basé à Marrakech, Maroc",
+    "scrollHint": "Faites défiler"
+  },
+  "about": {
+    "marker": "01 / À propos",
+    "heading": "À propos",
+    "lead": "Je transforme des idées complexes en expériences digitales simples, rapides et mémorables.",
+    "paragraph": "Développeur Full Stack Web & Mobile, je conçois des produits digitaux modernes, des applications évolutives et des interfaces que les utilisateurs apprécient réellement. Je travaille sur toute la chaîne — des bases de données et API jusqu'au moindre pixel d'une animation.",
+    "areasLabel": "Domaines principaux",
+    "areas": [
+      "Développement Full Stack",
+      "Applications Web",
+      "Applications Mobiles",
+      "SaaS",
+      "Automatisation",
+      "SEO",
+      "Expériences digitales"
+    ],
+    "openTo": "Ouvert à l'apprentissage de tout langage ou technologie qui aide l'équipe à construire de meilleurs produits."
+  },
+  "skills": {
+    "marker": "Stack",
+    "heading": "Les outils que j'utilise"
+  },
+  "experience": {
+    "marker": "02 / Expérience",
+    "heading": "Expérience",
+    "items": [
+      {
+        "period": "2024 — Présent",
+        "role": "Développeur Full Stack",
+        "company": "Freelance / Indépendant",
+        "description": "Conception et développement complets de produits web et mobiles — architecture, API backend, interfaces front-end et déploiement — pour des clients en e-commerce, SaaS et plateformes d'entreprises locales.",
+        "tech": ["Next.js", "Laravel", "MySQL", "Prisma", "Flutter", "Dart", "C++", "Java"]
+      },
+      {
+        "period": "2022 — 2024",
+        "role": "Développeur Web",
+        "company": "Projets clients — WordPress & PHP",
+        "description": "Réalisation de plateformes WordPress et WooCommerce sur mesure, optimisation des performances et du SEO, et applications PHP pour petites et moyennes entreprises.",
+        "tech": ["WordPress", "WooCommerce", "PHP", "SEO", "Python"]
+      },
+      {
+        "period": "2021 — 2022",
+        "role": "Développeur Junior",
+        "company": "Premiers projets",
+        "description": "Construction des bases — premiers sites en production, premiers écrans mobiles, premiers scripts d'automatisation — et développement d'une habitude d'apprendre ce que chaque projet exige.",
+        "tech": ["JavaScript", "PHP", "MySQL", "html", "css", "jquery", "bootstrap", "tailwindcss"]
+      }
+    ]
+  },
+  "projects": {
+    "marker": "03 / Travaux sélectionnés",
+    "heading": "Travaux sélectionnés",
+    "viewLabel": "Voir le projet",
+    "visitLabel": "Visiter le site",
+    "backLabel": "Retour aux travaux",
+    "categoryLabel": "Catégorie",
+    "yearLabel": "Année",
+    "tagsLabel": "Réalisé avec",
+    "previousLabel": "Projet précédent",
+    "nextLabel": "Projet suivant",
+    "notFoundTitle": "Projet introuvable",
+    "notFoundLead": "Ce projet n'existe pas ou a peut-être été déplacé."
+  },
+  "services": {
+    "marker": "04 / Services",
+    "heading": "Ce que je fais",
+    "items": [
+      {
+        "index": "01",
+        "title": "Développement Web",
+        "description": "Des sites et applications web rapides et évolutifs, construits avec des frameworks modernes et une architecture propre."
+      },
+      {
+        "index": "02",
+        "title": "Développement Mobile",
+        "description": "Des applications mobiles multiplateformes avec Flutter, qui semblent natives sur iOS comme sur Android."
+      },
+      {
+        "index": "03",
+        "title": "Développement SaaS",
+        "description": "Des produits SaaS de bout en bout — du modèle de données à la facturation, jusqu'au tableau de bord client."
+      },
+      {
+        "index": "04",
+        "title": "Implémentation UI / UX",
+        "description": "Des interfaces précises au pixel près et accessibles, avec des animations qui servent l'expérience plutôt que de la décorer."
+      },
+      {
+        "index": "05",
+        "title": "SEO & Performance",
+        "description": "SEO technique et optimisation des performances pour un produit rapide à charger et facile à trouver."
+      },
+      {
+        "index": "06",
+        "title": "Automatisation & Workflows IA",
+        "description": "Des workflows n8n et des intégrations IA qui suppriment les tâches répétitives du quotidien d'une équipe."
+      },
+      {
+        "index": "07",
+        "title": "WordPress / WooCommerce",
+        "description": "Des réalisations WordPress et WooCommerce sur mesure, pensées pour une marque et non pour un thème générique."
+      }
+    ]
+  },
+  "automation": {
+    "marker": "05 / Automatisation",
+    "heading": "Construire plus intelligemment",
+    "lead": "Je conçois des systèmes d'automatisation qui connectent vos outils, vos données et l'IA — pas seulement des sites web.",
+    "nodes": ["Déclencheur", "IA", "Traitement", "API", "Base de données", "Résultat"]
+  },
+  "contact": {
+    "marker": "06 / Contact",
+    "headingLines": ["Construisons", "quelque chose", "de grand."],
+    "lead": "Un projet en tête ? Parlons-en.",
+    "startProject": "Démarrer un projet",
+    "emailMe": "M'écrire"
+  },
+  "footer": {
+    "role": "Développeur Full Stack Web & Mobile",
+    "location": "Marrakech, Maroc",
+    "rights": "Tous droits réservés.",
+    "backToTop": "Retour en haut",
+    "socialLabel": "Ailleurs"
+  },
+  "theme": {
+    "light": "Clair",
+    "dark": "Sombre",
+    "toggle": "Changer de thème"
+  },
+  "language": {
+    "toggle": "Changer de langue"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "title": "Aafraoui Hatim — Full Stack Web & Mobile Developer",
+    "description": "Aafraoui Hatim is a Full Stack Web & Mobile Developer based in Marrakech, Morocco, building modern digital products, scalable applications and memorable user experiences with Next.js, Laravel, Flutter and automation.",
+    "ogAlt": "Aafraoui Hatim — Full Stack Web & Mobile Developer"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "services": "Services",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "cursor": {
+    "view": "View",
+    "open": "Open",
+    "drag": "Drag",
+    "explore": "Explore"
+  },
+  "preloader": {
+    "label": "Loading experience"
+  },
+  "hero": {
+    "eyebrow": "01",
+    "name": "Aafraoui Hatim",
+    "roleLines": ["Full Stack", "Web & Mobile", "Developer"],
+    "tagline": "Web • Mobile • Digital Experiences",
+    "location": "Based in Marrakech, Morocco",
+    "scrollHint": "Scroll to explore"
+  },
+  "about": {
+    "marker": "01 / About",
+    "heading": "About",
+    "lead": "I transform complex ideas into simple, fast and memorable digital experiences.",
+    "paragraph": "Full Stack Web & Mobile Developer focused on building modern digital products, scalable applications and interfaces people actually enjoy using. I work across the whole stack — from databases and APIs to the last pixel of an animation.",
+    "areasLabel": "Core areas",
+    "areas": [
+      "Full Stack Development",
+      "Web Applications",
+      "Mobile Applications",
+      "SaaS",
+      "Automation",
+      "SEO",
+      "Digital Experiences"
+    ],
+    "openTo": "Open to learning any programming language or technology that helps the team build better products."
+  },
+  "skills": {
+    "marker": "Stack",
+    "heading": "Tools I build with"
+  },
+  "experience": {
+    "marker": "02 / Experience",
+    "heading": "Experience",
+    "items": [
+      {
+        "period": "2024 — Present",
+        "role": "Full Stack Developer",
+        "company": "Freelance / Independent",
+        "description": "Designing and building complete web and mobile products end to end — architecture, backend APIs, front-end interfaces and deployment — for clients across e-commerce, SaaS and local business platforms.",
+        "tech": ["Next.js", "Laravel", "MySQL", "Prisma", "Flutter", "Dart", "C++", "Java"]
+      },
+      {
+        "period": "2022 — 2024",
+        "role": "Web Developer",
+        "company": "Client Projects — WordPress & PHP",
+        "description": "Delivered custom WordPress and WooCommerce platforms, performance and SEO optimization, and PHP applications for small and medium businesses.",
+        "tech": ["WordPress", "WooCommerce", "PHP", "SEO", "Python"]
+      },
+      {
+        "period": "2021 — 2022",
+        "role": "Junior Developer",
+        "company": "Early Projects",
+        "description": "Built the foundations — first production websites, first mobile screens, first automation scripts — and developed a habit of learning whatever the project required.",
+        "tech": ["JavaScript", "PHP", "MySQL", "html", "css", "jquery", "bootstrap", "tailwindcss"]
+      }
+    ]
+  },
+  "projects": {
+    "marker": "03 / Selected Work",
+    "heading": "Selected Work",
+    "viewLabel": "View project",
+    "visitLabel": "Visit live site",
+    "backLabel": "Back to work",
+    "categoryLabel": "Category",
+    "yearLabel": "Year",
+    "tagsLabel": "Built with",
+    "previousLabel": "Previous project",
+    "nextLabel": "Next project",
+    "notFoundTitle": "Project not found",
+    "notFoundLead": "This project doesn't exist or may have been moved."
+  },
+  "services": {
+    "marker": "04 / Services",
+    "heading": "What I do",
+    "items": [
+      {
+        "index": "01",
+        "title": "Web Development",
+        "description": "Fast, scalable websites and web applications built with modern frameworks and clean architecture."
+      },
+      {
+        "index": "02",
+        "title": "Mobile Development",
+        "description": "Cross-platform mobile apps with Flutter that feel native on both iOS and Android."
+      },
+      {
+        "index": "03",
+        "title": "SaaS Development",
+        "description": "End-to-end SaaS products — from data model to billing to the customer-facing dashboard."
+      },
+      {
+        "index": "04",
+        "title": "UI / UX Implementation",
+        "description": "Pixel-accurate, accessible interfaces with motion that supports the experience instead of decorating it."
+      },
+      {
+        "index": "05",
+        "title": "SEO & Performance",
+        "description": "Technical SEO and performance engineering so the product is fast to load and easy to find."
+      },
+      {
+        "index": "06",
+        "title": "Automation & AI Workflows",
+        "description": "n8n workflows and AI integrations that remove repetitive work from a team's day."
+      },
+      {
+        "index": "07",
+        "title": "WordPress / WooCommerce",
+        "description": "Custom WordPress and WooCommerce builds tailored to a brand instead of a generic theme."
+      }
+    ]
+  },
+  "automation": {
+    "marker": "05 / Automation",
+    "heading": "Build Smarter",
+    "lead": "I design automation systems that connect your tools, your data and AI — not just websites.",
+    "nodes": ["Trigger", "AI", "Process", "API", "Database", "Result"]
+  },
+  "contact": {
+    "marker": "06 / Contact",
+    "headingLines": ["Let's build", "something", "great."],
+    "lead": "Have a project in mind? Let's talk.",
+    "startProject": "Start a project",
+    "emailMe": "Email me"
+  },
+  "footer": {
+    "role": "Full Stack Web & Mobile Developer",
+    "location": "Marrakech, Morocco",
+    "rights": "All rights reserved.",
+    "backToTop": "Back to top",
+    "socialLabel": "Elsewhere"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "toggle": "Toggle theme"
+  },
+  "language": {
+    "toggle": "Change language"
+  }
+}

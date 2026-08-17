@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(git mv *)",
+      "PowerShell(Get-Process -Id 18228 -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess | ForEach-Object { Get-Process -Id $_ | Select-Object Id, ProcessName, Path })",
+      "Bash(npm run *)",
+      "Bash(npx eslint *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} -> %{redirect_url}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/fr -o /tmp/fr.html -w \"%{http_code}\\\\n\")",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://localhost:3000/fr)",
+      "Bash(npx --yes playwright install chromium --with-deps)",
+      "Bash(npm init *)",
+      "Bash(node check.mjs)",
+      "Bash(node debug.mjs)",
+      "Bash(node debug2.mjs)",
+      "Bash(node check2.mjs)",
+      "Bash(node theme-check.mjs)",
+      "Bash(node theme-check2.mjs)",
+      "Bash(node theme-scroll.mjs)",
+      "Bash(node mobile-fresh.mjs)"
+    ]
+  }
+}
