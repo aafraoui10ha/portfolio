@@ -14,6 +14,7 @@ function clamp01(v: number) {
   return Math.min(1, Math.max(0, v));
 }
 
+
 export function Hero() {
   const tAbout = useTranslations("about");
   const sectionRef = useRef<HTMLDivElement>(null);
