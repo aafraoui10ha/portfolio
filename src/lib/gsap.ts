@@ -9,4 +9,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // a provider tree isn't guaranteed to put this first otherwise.
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
+// Mobile browsers resize the viewport as the address bar shows/hides while
+// scrolling, which would otherwise trigger a ScrollTrigger refresh mid-pin
+// and throw off scrub progress.
+ScrollTrigger.config({ ignoreMobileResize: true });
+
 export { gsap, ScrollTrigger };

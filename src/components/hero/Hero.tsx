@@ -28,7 +28,9 @@ export function Hero() {
       if (!sectionRef.current) return;
 
       if (reducedMotion) {
-        gsap.set(aboutPreviewRef.current, { opacity: 1 });
+        // No scroll-scrub in this mode, so the "about" teaser never gets a
+        // chance to cross-fade in — leave it hidden instead of stuck at
+        // full opacity on top of the hero text.
         return;
       }
 
