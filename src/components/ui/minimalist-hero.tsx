@@ -17,17 +17,13 @@ interface MinimalistHeroProps {
   /** Header is optional — omit both when the page already has a navbar. */
   logoText?: string;
   navLinks?: { label: string; href: string }[];
-  mainText: string;
-  readMoreLink: string;
-  readMoreLabel?: string;
+  /** Big text on the right, one entry per line. */
+  headingLines: string[];
+  /** Name (big, left) and location (bottom center). Tagline is currently unused. */
+  details: { name: string; tagline: string; location: string };
   imageSrc: string;
   imageAlt: string;
-  overlayText: {
-    part1: string;
-    part2: string;
-  };
   socialLinks: { icon: IconComponent; href: string; label: string }[];
-  locationText: string;
   /** Seconds added to every intro animation (e.g. to wait for a preloader). */
   introDelay?: number;
   id?: string;
@@ -65,17 +61,36 @@ const SocialIcon = ({
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+// Shared by the left heading and the right details so both read as one size.
+const BIG_TEXT =
+  "flex flex-col gap-3 text-center font-display text-4xl font-extrabold leading-[1] tracking-tight text-foreground sm:text-5xl md:text-left lg:text-6xl";
+
+// Each line slides up out of its own mask, staggered.
+const RevealLines = ({ lines, delay }: { lines: string[]; delay: number }) => (
+  <>
+    {lines.map((line, i) => (
+      <span key={line} className="block overflow-hidden pb-1">
+        <motion.span
+          initial={{ y: "110%" }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.9, ease: EASE, delay: delay + i * 0.08 }}
+          className="inline-block"
+        >
+          {line}
+        </motion.span>
+      </span>
+    ))}
+  </>
+);
+
 export const MinimalistHero = ({
   logoText,
   navLinks,
-  mainText,
-  readMoreLink,
-  readMoreLabel = "Read More",
+  headingLines,
+  details,
   imageSrc,
   imageAlt,
-  overlayText,
   socialLinks,
-  locationText,
   introDelay = 0,
   id,
   className,
@@ -138,25 +153,13 @@ export const MinimalistHero = ({
       )}
 
       {/* Main Content Area */}
-      <div className="relative grid w-full max-w-7xl flex-grow grid-cols-1 items-center gap-10 md:grid-cols-3 md:gap-0">
+      <div className="relative grid w-full max-w-7xl flex-grow grid-cols-1 items-center justify-between gap-10 md:grid-cols-3 md:gap-0">
         {/* Left Text Content */}
-        <motion.div style={textScroll} className="z-20 order-2 md:order-1">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: d(1) }}
-            className="text-center md:text-left"
-          >
-            <p className="mx-auto max-w-xs text-sm leading-relaxed text-foreground/80 md:mx-0">
-              {mainText}
-            </p>
-            <a
-              href={readMoreLink}
-              className="mt-4 inline-block text-sm font-medium text-foreground underline decoration-from-font underline-offset-4 transition-colors hover:text-accent"
-            >
-              {readMoreLabel}
-            </a>
-          </motion.div>
+        <motion.div style={textScroll} className="z-20 order-2 md:order-1 md:justify-self-start">
+          <h1 className={BIG_TEXT}>
+            {/* One word per line, e.g. "Aafraoui / Hatim". */}
+            <RevealLines lines={details.name.split(" ")} delay={d(1)} />
+          </h1>
         </motion.div>
 
         {/* Center Image with Circle */}
@@ -191,26 +194,17 @@ export const MinimalistHero = ({
         </motion.div>
 
         {/* Right Text */}
-        <motion.div style={textScroll} className="z-20 order-3">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: d(1.2) }}
-            className="flex items-center justify-center text-center md:justify-start md:pl-10 md:text-left"
-          >
-            <h1 className="font-display text-5xl font-extrabold leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-              {overlayText.part1}
-              <br />
-              {overlayText.part2}
-            </h1>
-          </motion.div>
+        <motion.div style={textScroll} className="z-20 order-3 md:justify-self-end">
+          <p className={cn(BIG_TEXT, "md:text-right")}>
+            <RevealLines lines={headingLines} delay={d(1.2)} />
+          </p>
         </motion.div>
       </div>
 
       {/* Footer Elements */}
       <motion.footer
         style={reducedMotion ? undefined : { opacity: fade }}
-        className="z-30 flex w-full max-w-7xl items-center justify-between"
+        className="z-30 grid w-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -226,9 +220,10 @@ export const MinimalistHero = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: d(1.3) }}
-          className="text-sm font-medium text-foreground/80"
+          className="flex items-center gap-2 text-sm font-medium text-foreground/80"
         >
-          {locationText}
+          <span className="h-2 w-2 rounded-full bg-accent" aria-hidden />
+          {details.location}
         </motion.div>
       </motion.footer>
     </section>

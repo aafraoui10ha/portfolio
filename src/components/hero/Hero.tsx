@@ -14,7 +14,6 @@ const icons: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function Hero() {
   const t = useTranslations("hero");
-  const tAbout = useTranslations("about");
 
   return (
     <MinimalistHero
@@ -23,16 +22,17 @@ export function Hero() {
       // and the content is pushed down to clear it.
       className="pt-28 md:pt-28"
       introDelay={1.5}
-      mainText={tAbout("lead")}
-      readMoreLink="#about"
-      readMoreLabel={t("readMore")}
+      headingLines={t.raw("roleLines") as string[]}
+      details={{
+        name: t("name"),
+        tagline: t("tagline"),
+        location: t("location"),
+      }}
       imageSrc={portraitConfig.srcCutout}
       imageAlt={portraitConfig.alt}
-      overlayText={{ part1: t("overlay1"), part2: t("overlay2") }}
       socialLinks={socialLinks
         .filter((s) => icons[s.label])
         .map((s) => ({ ...s, icon: icons[s.label] }))}
-      locationText={t("location")}
     />
   );
 }

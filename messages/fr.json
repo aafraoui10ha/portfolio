@@ -28,10 +28,7 @@
     "roleLines": ["Développeur", "Full Stack", "Web & Mobile"],
     "tagline": "Web • Mobile • Expériences digitales",
     "location": "Basé à Marrakech, Maroc",
-    "scrollHint": "Faites défiler",
-    "readMore": "En savoir plus",
-    "overlay1": "Développeur",
-    "overlay2": "Full Stack."
+    "scrollHint": "Faites défiler"
   },
   "about": {
     "marker": "01 / À propos",
