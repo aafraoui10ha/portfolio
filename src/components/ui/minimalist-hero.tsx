@@ -203,29 +203,33 @@ export const MinimalistHero = ({
 
       {/* Footer Elements */}
       <motion.footer
-        style={reducedMotion ? undefined : { opacity: fade }}
-        className="z-30 grid w-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4"
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: d(1.2) }}
-          className="flex items-center space-x-4"
-        >
-          {socialLinks.map((link) => (
-            <SocialIcon key={link.label} {...link} />
-          ))}
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: d(1.3) }}
-          className="flex items-center gap-2 text-sm font-medium text-foreground/80"
-        >
-          <span className="h-2 w-2 rounded-full bg-accent" aria-hidden />
-          {details.location}
-        </motion.div>
-      </motion.footer>
+  style={reducedMotion ? undefined : { opacity: fade }}
+  className="z-30 flex w-full max-w-7xl items-center justify-center gap-8"
+>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: d(1.2) }}
+    className="flex items-center space-x-4"
+  >
+    {socialLinks.map((link) => (
+      <SocialIcon key={link.label} {...link} />
+    ))}
+  </motion.div>
+
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: d(1.3) }}
+    className="flex items-center gap-2 text-sm font-medium text-foreground/80"
+  >
+    <span
+      className="h-2 w-2 rounded-full bg-accent"
+      aria-hidden
+    />
+    {details.location}
+  </motion.div>
+</motion.footer>
     </section>
   );
 };
