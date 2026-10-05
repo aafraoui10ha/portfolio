@@ -1,118 +1,38 @@
 "use client";
 
-import { useRef } from "react";
 import { useTranslations } from "next-intl";
-import { useGSAP } from "@gsap/react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
-import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { portraitConfig } from "@/lib/content";
-import { PortraitGrid, type PortraitGridHandle } from "./PortraitGrid";
-import { HeroText } from "./HeroText";
-import { ScrollIndicator } from "./ScrollIndicator";
+import { MinimalistHero } from "@/components/ui/minimalist-hero";
+import { portraitConfig, socialLinks } from "@/lib/content";
+import { GithubIcon, InstagramIcon, LinkedinIcon } from "./SocialIcons";
 
-function clamp01(v: number) {
-  return Math.min(1, Math.max(0, v));
-}
-
+// lucide-react v1 dropped brand icons, so these are local SVGs.
+const icons: Record<string, React.ComponentType<{ className?: string }>> = {
+  GitHub: GithubIcon,
+  LinkedIn: LinkedinIcon,
+  Instagram: InstagramIcon,
+};
 
 export function Hero() {
+  const t = useTranslations("hero");
   const tAbout = useTranslations("about");
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<PortraitGridHandle>(null);
-  const aboutPreviewRef = useRef<HTMLDivElement>(null);
-  const heroTextRef = useRef<HTMLDivElement>(null);
-  const reducedMotion = useReducedMotion();
-
-  useGSAP(
-    () => {
-      if (!sectionRef.current) return;
-
-      if (reducedMotion) {
-        // No scroll-scrub in this mode, so the "about" teaser never gets a
-        // chance to cross-fade in — leave it hidden instead of stuck at
-        // full opacity on top of the hero text.
-        return;
-      }
-
-      const st = ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=150%",
-        pin: true,
-        scrub: 0.4,
-        onUpdate: (self) => {
-          gridRef.current?.render(self.progress);
-
-          const heroFade = 1 - clamp01(self.progress / 0.5);
-          gsap.set(heroTextRef.current, {
-            opacity: heroFade,
-            yPercent: -20 * (1 - heroFade),
-          });
-
-          const aboutReveal = clamp01((self.progress - 0.45) / 0.45);
-          gsap.set(aboutPreviewRef.current, {
-            opacity: aboutReveal,
-            yPercent: 15 * (1 - aboutReveal),
-          });
-        },
-      });
-
-      return () => st.kill();
-    },
-    { scope: sectionRef, dependencies: [reducedMotion] }
-  );
 
   return (
-    <section
-      ref={sectionRef}
+    <MinimalistHero
       id="hero"
-      className="relative flex h-[100svh] min-h-[640px] w-full flex-col overflow-hidden"
-    >
-      <div className="absolute inset-0">
-        {reducedMotion ? (
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcSet={portraitConfig.srcDesktop}
-            />
-            <img
-              src={portraitConfig.srcMobile}
-              alt={portraitConfig.alt}
-              className="h-full w-full object-cover opacity-80"
-            />
-          </picture>
-        ) : (
-          <PortraitGrid ref={gridRef} className="h-full w-full" />
-        )}
-      </div>
-
-      {/*
-        The portrait is deliberately dark/moody art regardless of site theme,
-        so the hero name/tagline (HeroText) stay fixed-light rather than
-        theme-reactive — this scrim guarantees contrast for that. It's
-        strongest at the top/bottom (where that text sits) and lightest in
-        the middle, which is why the "about" reveal text below can safely
-        use the theme-reactive foreground color instead.
-      */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/40" />
-
-      <div
-        ref={aboutPreviewRef}
-        className="pointer-events-none absolute inset-0 z-[5] flex items-center justify-center opacity-0"
-      >
-        <span className="px-4 text-center font-display text-[16vw] font-semibold uppercase leading-none tracking-tighter text-foreground sm:text-[14vw] md:text-[12vw]">
-          {tAbout("heading")}
-        </span>
-      </div>
-
-      <div
-        ref={heroTextRef}
-        className="relative z-10 flex h-full flex-col justify-between px-6 py-28 md:px-10 md:py-32"
-      >
-        <HeroText />
-      </div>
-
-      <ScrollIndicator />
-    </section>
+      // The site Navbar is fixed on top, so the hero's own header is omitted
+      // and the content is pushed down to clear it.
+      className="pt-28 md:pt-28"
+      introDelay={1.5}
+      mainText={tAbout("lead")}
+      readMoreLink="#about"
+      readMoreLabel={t("readMore")}
+      imageSrc={portraitConfig.srcCutout}
+      imageAlt={portraitConfig.alt}
+      overlayText={{ part1: t("overlay1"), part2: t("overlay2") }}
+      socialLinks={socialLinks
+        .filter((s) => icons[s.label])
+        .map((s) => ({ ...s, icon: icons[s.label] }))}
+      locationText={t("location")}
+    />
   );
 }

@@ -28,7 +28,10 @@
     "roleLines": ["Développeur", "Full Stack", "Web & Mobile"],
     "tagline": "Web • Mobile • Expériences digitales",
     "location": "Basé à Marrakech, Maroc",
-    "scrollHint": "Faites défiler"
+    "scrollHint": "Faites défiler",
+    "readMore": "En savoir plus",
+    "overlay1": "Développeur",
+    "overlay2": "Full Stack."
   },
   "about": {
     "marker": "01 / À propos",
@@ -43,6 +46,7 @@
       "SaaS",
       "Automatisation",
       "SEO",
+      "GEO",
       "Expériences digitales"
     ],
     "openTo": "Ouvert à l'apprentissage de tout langage ou technologie qui aide l'équipe à construire de meilleurs produits."

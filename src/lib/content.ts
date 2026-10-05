@@ -6,6 +6,8 @@
 export const portraitConfig = {
   srcMobile: "/images/portrait/hero.png",
   srcDesktop: "/images/portrait/heroweb.png",
+  // Transparent cutout used by the hero.
+  srcCutout: "/images/portrait/hatimaafraoui.png",
   alt: "Aafraoui Hatim",
   // Below the md breakpoint (768px) srcMobile loads; at or above it,
   // srcDesktop loads. Swap either file in place — nothing else changes.
@@ -21,9 +23,9 @@ export const siteConfig = {
 };
 
 export const socialLinks = [
-  { label: "GitHub", href: "https://github.com/" }, // TODO: replace with real profile
-  { label: "LinkedIn", href: "https://linkedin.com/" }, // TODO: replace with real profile
-  { label: "Instagram", href: "https://instagram.com/" }, // TODO: replace with real profile
+  { label: "GitHub", href: "https://github.com/aafraoui10ha" }, // TODO: replace with real profile
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/hatim-aafraoui" }, // TODO: replace with real profile
+  { label: "Instagram", href: "https://www.instagram.com/aafraoui_hatim/" }, // TODO: replace with real profile
 ];
 
 export const skillsList = [
