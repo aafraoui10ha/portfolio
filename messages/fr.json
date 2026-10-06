@@ -11,7 +11,8 @@
     "services": "Services",
     "contact": "Contact",
     "menu": "Menu",
-    "close": "Fermer"
+    "close": "Fermer",
+    "downloadCv": "Télécharger le CV"
   },
   "cursor": {
     "view": "Voir",
@@ -59,7 +60,7 @@
       {
         "period": "2024 — Présent",
         "role": "Développeur Full Stack",
-        "company": "Freelance / Indépendant",
+        "company": "A travaillé dans diverses entreprises",
         "description": "Conception et développement complets de produits web et mobiles — architecture, API backend, interfaces front-end et déploiement — pour des clients en e-commerce, SaaS et plateformes d'entreprises locales.",
         "tech": ["Next.js", "Laravel", "MySQL", "Prisma", "Flutter", "Dart", "C++", "Java"]
       },

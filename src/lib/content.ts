@@ -8,6 +8,9 @@ export const portraitConfig = {
   srcDesktop: "/images/portrait/heroweb.png",
   // Transparent cutout used by the hero.
   srcCutout: "/images/portrait/hatimaafraoui.png",
+  // Monogram mark used as the nav logo (white shape on a transparent
+  // background, recolored via CSS mask + currentColor).
+  logo: "/images/portrait/logo1.png",
   alt: "Aafraoui Hatim",
   // Below the md breakpoint (768px) srcMobile loads; at or above it,
   // srcDesktop loads. Swap either file in place — nothing else changes.
@@ -19,6 +22,7 @@ export const siteConfig = {
   whatsappNumber: "0620307291", // Morocco, local format
   whatsappHref: "https://wa.me/212620307291",
   url: "https://aafraouihatim.dev", // TODO: replace with the real production domain
+  cvHref: "/cv/aafraoui-hatim-cv.pdf",
   year: new Date().getFullYear(),
 };
 

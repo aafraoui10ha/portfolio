@@ -125,6 +125,54 @@ export const projects: Project[] = [
     tags: ["wordpress", "GSAP", "aos", "Tailwind"],
     year: "2026",
   },
+   {
+    id: "project-10",
+    title: "Agency Photographe immobilier",
+    category: "Photographe immobilier",
+    type: "website Photographe immobilier",
+    description:
+      "Photographe immobilier à Marrakech : l'art de capturer des moments uniques et de créer des souvenirs inoubliables à travers l'objectif.",
+    image: "/imgproject/marrakechphotovideo.png",
+    link: "https://www.marrakechphotovideo.com/",
+    tags: ["wordpress", "GSAP", "aos", "bootstrap"],
+    year: "2024",
+  },
+  {
+    id: "project-11",
+    title: "Agency marketing digital",
+    category: "Marketing Digital",
+    type: "website Marketing Digital",
+    description:
+      "Agence de marketing digital à Marrakech : l'art de promouvoir les entreprises et de créer des campagnes efficaces.",
+    image: "/imgproject/nexoraat.png",
+    link: "https://www.nexoraat.com/",
+    tags: ["next.js", "GSAP", "aos", "tailwindcss" , "i18n"],
+    year: "2026",
+  },
+    {
+    id: "project-12",
+    title: "news portal mondial maroc 2030",
+    category: "news",
+    type: "website news",
+    description:
+      "Mondial Maroc 2030 : l'actualité en direct, les analyses et les opinions sur les événements mondiaux et locaux.",
+    image: "/imgproject/mondial2030.png",
+    link: "https://www.mondial-maroc-2030.com/",
+    tags: ["next.js", "GSAP", "aos", "tailwindcss" , "i18n"],
+    year: "2026",
+  },
+    {
+    id: "project-13",
+    title: "riad assala",
+    category: "booking & restoration",
+    type: "website booking & restoration",
+    description:
+      "Riad Assala : l'art de vivre à la marocaine, un lieu de détente et de confort pour les voyageurs en quête d'authenticité.",
+    image: "/imgproject/riadassala.png",
+    link: "https://www.riad-assala.com/",
+    tags: ["next.js", "GSAP", "aos", "tailwindcss" , "i18n"],
+    year: "2026",
+  },
 ];
 
 export function getProjectSlug(project: Project): string {

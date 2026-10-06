@@ -1,13 +1,15 @@
 "use client";
 
-import { useRef, type MouseEvent } from "react";
+import { useRef, type CSSProperties, type MouseEvent } from "react";
 import { useGSAP } from "@gsap/react";
 import { useTranslations } from "next-intl";
 import { X } from "lucide-react";
 import { gsap } from "@/lib/gsap";
 import { useLenis } from "@/components/providers/SmoothScrollProvider";
+import { portraitConfig, siteConfig } from "@/lib/content";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { DownloadCvButton } from "./DownloadCvButton";
 
 interface NavItem {
   key: string;
@@ -78,9 +80,15 @@ export function MobileMenu({ open, onClose, onNavigate, items }: MobileMenuProps
       style={{ display: "none", clipPath: "circle(0% at 100% 0%)" }}
     >
       <div className="flex items-center justify-between">
-        <span className="font-display text-sm font-semibold uppercase tracking-[0.2em]">
-          AH
-        </span>
+        <span
+          aria-label={siteConfig.name}
+          className="block h-7 w-7 bg-current text-foreground [mask-image:var(--logo-mask)] [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain] [-webkit-mask-image:var(--logo-mask)] [-webkit-mask-position:center] [-webkit-mask-repeat:no-repeat] [-webkit-mask-size:contain]"
+          style={
+            {
+              "--logo-mask": `url('${portraitConfig.logo}')`,
+            } as CSSProperties
+          }
+        />
         <button type="button" onClick={onClose} aria-label={t("close")}>
           <X className="h-6 w-6" aria-hidden />
         </button>
@@ -100,9 +108,12 @@ export function MobileMenu({ open, onClose, onNavigate, items }: MobileMenuProps
         ))}
       </ul>
 
-      <div className="flex items-center justify-between">
-        <LanguageSwitcher />
-        <ThemeToggle />
+      <div className="flex flex-col gap-6">
+        <DownloadCvButton variant="block" />
+        <div className="flex items-center justify-between">
+          <LanguageSwitcher />
+          <ThemeToggle />
+        </div>
       </div>
     </div>
   );

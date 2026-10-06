@@ -1,13 +1,15 @@
 "use client";
 
-import { useEffect, useState, type MouseEvent } from "react";
+import { useEffect, useState, type CSSProperties, type MouseEvent } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useLenis } from "@/components/providers/SmoothScrollProvider";
 import { useMagnetic } from "@/hooks/useMagnetic";
+import { portraitConfig, siteConfig } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { DownloadCvButton } from "./DownloadCvButton";
 import { MobileMenu } from "./MobileMenu";
 
 const NAV_ITEMS = [
@@ -72,13 +74,17 @@ export function Navbar() {
             href="#top"
             onClick={(e) => handleNavClick(e, "#top")}
             data-cursor="true"
+            aria-label={siteConfig.name}
             className={cn(
-              "font-display text-sm font-semibold uppercase tracking-[0.2em] transition-colors duration-500",
+              "block h-7 w-7 bg-current transition-colors duration-500 [mask-image:var(--logo-mask)] [mask-position:center] [mask-repeat:no-repeat] [mask-size:contain] [-webkit-mask-image:var(--logo-mask)] [-webkit-mask-position:center] [-webkit-mask-repeat:no-repeat] [-webkit-mask-size:contain]",
               overHero ? "text-white" : "text-foreground"
             )}
-          >
-            AH
-          </a>
+            style={
+              {
+                "--logo-mask": `url('${portraitConfig.logo}')`,
+              } as CSSProperties
+            }
+          />
 
           <ul className="hidden items-center gap-8 md:flex">
             {NAV_ITEMS.slice(1).map((item) => (
@@ -101,6 +107,7 @@ export function Navbar() {
           </ul>
 
           <div className="hidden items-center gap-4 md:flex">
+            <DownloadCvButton overHero={overHero} />
             <LanguageSwitcher overHero={overHero} />
             <ThemeToggle overHero={overHero} />
           </div>
