@@ -11,10 +11,20 @@ import { SectionMarker } from "@/components/ui/SectionMarker";
 import { Link } from "@/i18n/navigation";
 import { getAllProjects, getProjectSlug } from "@/lib/projects";
 
-const projects = getAllProjects();
+const allProjects = getAllProjects();
 
-export function Projects() {
+interface ProjectsProps {
+  /** Max number of projects to show; shows a "view all" link when set. */
+  limit?: number;
+  /** "page" renders the standalone /work page header (h1) instead of the home section. */
+  variant?: "home" | "page";
+}
+
+export function Projects({ limit, variant = "home" }: ProjectsProps) {
   const t = useTranslations("projects");
+  const isPage = variant === "page";
+  const projects = limit ? allProjects.slice(0, limit) : allProjects;
+  const hasMore = projects.length < allProjects.length;
   const scopeRef = useScrollReveal<HTMLDivElement>();
   const previewRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState<string | null>(null);
@@ -83,15 +93,33 @@ export function Projects() {
 
   return (
     <section
-      id="work"
+      id={isPage ? undefined : "work"}
       ref={scopeRef}
-      className="relative border-t border-border px-6 py-28 md:px-10 md:py-40"
+      className={
+        isPage
+          ? "relative px-6 pb-28 pt-36 md:px-10 md:pb-40 md:pt-48"
+          : "relative border-t border-border px-6 py-28 md:px-10 md:py-40"
+      }
     >
       <div className="mx-auto max-w-6xl">
-        <SectionMarker label={t("marker")} />
-        <h2 className="reveal mt-6 font-display text-3xl font-medium md:text-5xl">
-          {t("heading")}
-        </h2>
+        {isPage ? (
+          <>
+            <SectionMarker label={t("allMarker")} />
+            <h1 className="reveal mt-6 font-display text-4xl font-medium md:text-6xl">
+              {t("allHeading")}
+            </h1>
+            <p className="reveal mt-6 max-w-xl text-sm leading-relaxed text-muted md:text-base">
+              {t("allLead", { count: allProjects.length })}
+            </p>
+          </>
+        ) : (
+          <>
+            <SectionMarker label={t("marker")} />
+            <h2 className="reveal mt-6 font-display text-3xl font-medium md:text-5xl">
+              {t("heading")}
+            </h2>
+          </>
+        )}
 
         <ul className="mt-16 flex flex-col">
           {projects.map((project, i) => {
@@ -171,6 +199,19 @@ export function Projects() {
             );
           })}
         </ul>
+
+        {hasMore && (
+          <div className="reveal mt-16 flex justify-center">
+            <Link
+              href="/work"
+              data-cursor="true"
+              className="inline-flex items-center gap-3 rounded-full border border-border px-8 py-4 text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:border-accent hover:text-accent"
+            >
+              {t("viewAllLabel", { count: allProjects.length })}
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
+        )}
       </div>
 
       <div

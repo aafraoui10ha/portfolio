@@ -85,6 +85,10 @@
     "heading": "Selected Work",
     "viewLabel": "View project",
     "visitLabel": "Visit live site",
+    "viewAllLabel": "View all projects ({count})",
+    "allMarker": "Portfolio",
+    "allHeading": "All projects",
+    "allLead": "{count} projects — websites, e-commerce stores and web apps I've designed and built.",
     "backLabel": "Back to work",
     "categoryLabel": "Category",
     "yearLabel": "Year",
@@ -147,6 +151,15 @@
     "lead": "Have a project in mind? Let's talk.",
     "startProject": "Start a project",
     "emailMe": "Email me"
+  },
+  "ctaPopup": {
+    "eyebrow": "Available for new projects",
+    "title": "Got a project in mind?",
+    "lead": "Websites, e-commerce stores or mobile apps — tell me about your idea and let's build it together.",
+    "whatsapp": "Chat on WhatsApp",
+    "email": "Email me",
+    "later": "Maybe later",
+    "close": "Close"
   },
   "footer": {
     "role": "Full Stack Web & Mobile Developer",

@@ -15,7 +15,7 @@ export default function Home() {
       <About />
       <Skills />
       <Experience />
-      <Projects />
+      <Projects limit={4} />
       <Services />
       <Automation />
       <Marquee />

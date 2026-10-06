@@ -36,7 +36,7 @@ export function Contact() {
           {t("lead")}
         </p>
 
-        <div className="reveal mt-12 flex flex-wrap items-center gap-6">
+        <div className="reveal mt-12 flex flex-wrap items-center justify-center gap-6 md:justify-start">
           <a
             ref={startRef}
             href={`mailto:${siteConfig.email}`}
@@ -69,7 +69,7 @@ export function Contact() {
           </a>
         </div>
 
-        <ul className="reveal mt-20 flex flex-wrap gap-x-8 gap-y-3 border-t border-border pt-8">
+        <ul className="reveal mt-20 flex flex-wrap justify-center gap-x-8 gap-y-3 border-t md:justify-start border-border pt-8">
           {socialLinks.map((social) => (
             <li key={social.label}>
               <a

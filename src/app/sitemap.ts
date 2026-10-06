@@ -25,5 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }))
   );
 
-  return [...homeEntries, ...projectEntries];
+  const workEntries: MetadataRoute.Sitemap = routing.locales.map((locale) => ({
+    url: `${baseUrl}/${locale}/work`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...homeEntries, ...workEntries, ...projectEntries];
 }

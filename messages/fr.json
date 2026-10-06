@@ -85,6 +85,10 @@
     "heading": "Travaux sélectionnés",
     "viewLabel": "Voir le projet",
     "visitLabel": "Visiter le site",
+    "viewAllLabel": "Voir tous les projets ({count})",
+    "allMarker": "Portfolio",
+    "allHeading": "Tous les projets",
+    "allLead": "{count} projets — sites vitrines, boutiques e-commerce et applications web que j'ai conçus et développés.",
     "backLabel": "Retour aux travaux",
     "categoryLabel": "Catégorie",
     "yearLabel": "Année",
@@ -147,6 +151,15 @@
     "lead": "Un projet en tête ? Parlons-en.",
     "startProject": "Démarrer un projet",
     "emailMe": "M'écrire"
+  },
+  "ctaPopup": {
+    "eyebrow": "Disponible pour de nouveaux projets",
+    "title": "Un projet en tête ?",
+    "lead": "Site web, boutique e-commerce ou application mobile — parlez-moi de votre idée et construisons-la ensemble.",
+    "whatsapp": "Discuter sur WhatsApp",
+    "email": "M'écrire",
+    "later": "Plus tard",
+    "close": "Fermer"
   },
   "footer": {
     "role": "Développeur Full Stack Web & Mobile",

@@ -10,6 +10,7 @@ import { CustomCursor } from "@/components/layout/CustomCursor";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Preloader } from "@/components/layout/Preloader";
+import { CtaPopup } from "@/components/layout/CtaPopup";
 import { siteConfig } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -74,6 +75,7 @@ export default async function LocaleLayout({
         <Navbar />
         <main id="top">{children}</main>
         <Footer />
+        <CtaPopup />
       </Providers>
     </NextIntlClientProvider>
   );
